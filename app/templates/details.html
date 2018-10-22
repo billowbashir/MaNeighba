@@ -3,27 +3,60 @@
 {% load bootstrap3 %} {% load staticfiles%}
 <div class="container">
 <div class="row">
-<div style="margin-top:20px;" class='col-md-12'>
+<div style="margin-top:20px;" class='col-md-5'>
 <div style="width:100%;" class="w3-container card">
 
   <div class="w3-card-4" style="width:50%;">
     <header class="w3-container edge">
-      <h1>{{neighbourhood.name}} Neighbourhood</h1>
+      <h1>{{neighbourhood.name}}</h1>
     </header>
 
     <div class="w3-container content">
-      <p>{{neighbourhood.name}}</p>
+      <p>name:{{neighbourhood.name}}</p>
       <p>location: {{neighbourhood.location}}</p>
       <p>admin: {{neighbourhood.admin}}</p>
 
     </div>
 
-    <!-- <footer class="w3-container edge">
-      <h5>Footer</h5>
-    </footer> -->
+
   </div>
 </div>
  </div>
+
+
+
+
+ <div style="color:white;margin-top:20px;" class="col-md-3">
+ <p>click <a class="img-thumbnail" href="{%url 'new_business' pk=neighbourhood.id %}" >
+        here
+      </a> to post about your business</p>
+      <!-- data-image-id="{{hood.id}}" data-toggle="modal" data-target="#{{hood.id}}" -->
+      {%if businesses%}
+      {%for business in businesses%}
+
+      <p>name: {{business.name}}</p>
+      <p>description: {{business.description}}</p>
+      <p>contact: {{business.email}}</p>
+      {%endfor%}
+      {%else%}
+      <p>no business at the moment</p>
+      {%endif%}
+      </div>
+
+
+
+<div style="color:white;margin-top:20px;" class="col-md-3">
+  <p>Have something to share with the rest of your neighbourhood? click  <a class="img-thumbnail" href="{%url 'new_post' pk=neighbourhood.id %}" >
+         here
+       </a> </p>
+       {%if posts%}
+       {%for post in posts%}
+       <p><strong>{{post.user.username}}: </strong> {{post.post}}</p>
+       {%endfor%}
+       {%else%}
+       <p>no business at the moment</p>
+       {%endif%}
+</div>
  </div>
  </div>
 

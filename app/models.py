@@ -49,6 +49,7 @@ class Profile(models.Model):
 
 class Business(models.Model):
     name=models.CharField(max_length=60)
+    description=models.CharField(max_length=200)
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     neighborhood=models.ForeignKey(Neighbourhood,on_delete=models.CASCADE)
     email=models.EmailField()
@@ -69,3 +70,8 @@ class Business(models.Model):
         business.name=Value
         business.save()
         return business
+
+class Post(models.Model):
+        post=models.CharField(max_length=200)
+        user=models.ForeignKey(User,on_delete=models.CASCADE)
+        neighborhood=models.ForeignKey(Neighbourhood,on_delete=models.CASCADE)
