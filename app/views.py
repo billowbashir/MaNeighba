@@ -49,7 +49,7 @@ def new_profile(request):
     else:
         profile_form = NewProfileForm()
     return render(request, 'new_profile.html', {"profile_form": profile_form,})
-def search_projects(request):
+def search_hoods(request):
 
     if 'neighborhood' in request.GET and request.GET['neighborhood']:
         search_term=request.GET.get('neighborhood')
