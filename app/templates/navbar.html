@@ -15,7 +15,7 @@
     <div class="col-sm-4 col-md-4 navbar-right">
       {% if user.is_authenticated %}
       <a class="navbar-brand" href="#">{{request.user}}</a>
-      <a class="navbar-brand" href="#">new project</a>
+      <a class="navbar-brand" href="{% url 'new_neighbourhood'%}">new neighbourhood</a>
       <a class="navbar-brand" href="/logout">logout</a>
       {%else%}
       <a class='navbar-brand' href="/accounts/login">Login</a>
@@ -44,7 +44,7 @@
   background-size: cover;
 }
 body{
-  background-image: url('http://informationcommunicationtechnology.com/wp-content/uploads/2018/06/Dark-rustic-wood-panel-background-646433.jpg');
+  background-image: url('https://images.unsplash.com/photo-1460602594182-8568137446ce?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c6a89cf0d31c8ed23b35aaf9a119a9f5&w=1000&q=80');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
