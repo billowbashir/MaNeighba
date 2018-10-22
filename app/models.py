@@ -7,11 +7,29 @@ class Neighbourhood(models.Model):
     population=models.IntegerField()
     admin=models.ForeignKey(User,on_delete=models.CASCADE)
 
-# create_neigborhood()
-# delete_neigborhood()
-# find_neigborhood(neigborhood_id)
-# update_neighborhood()
-# update_occupants()
+    def create_neigborhood(self):
+        self.save()
+
+    def delete_neigborhood(self):
+        self.delete()
+    @classmethod
+    def find_neigborhood(cls,neighborhood_id):
+        neighborhood=cls.objects.filter(id=neighborhood_id)
+        return neighborhood
+    @classmethod
+    def update_neighborhood(cls,neighborhood_id):
+        neighborhood=cls.objects.filter(id=neighborhood_id)
+        neighborhood.name=Value
+        neighborhood.save()
+        return neighborhood
+    @classmethod
+    def update_neighborhood(cls,neighborhood_id):
+        neighborhood=cls.objects.filter(id=neighborhood_id)
+        neighborhood.occupants=Value
+        neighborhood.save()
+        return neighborhood
+
+
 
 
 class Profile(models.Model):
@@ -19,7 +37,11 @@ class Profile(models.Model):
     bio=models.CharField(max_length=300)
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     # neighborhood=models.ForeignKey(Neighbourhood,on_delete=models.CASCADE)
+   def create_profile(self):
+       self.save()
 
+   def delete_profile(self):
+       self.delete()
 
 
 class Business(models.Model):
@@ -28,8 +50,19 @@ class Business(models.Model):
     neighborhood=models.ForeignKey(Neighbourhood,on_delete=models.CASCADE)
     email=models.EmailField()
 
+    def create_business(self):
+        self.save()
 
-# create_business()
-# delete_business()
-# find_business(business_id)
-# update_business()
+    def delete_business(self):
+        self.delete()
+
+    @classmethod
+    def find_business(cls,business_id):
+        business=cls.objects.filter(id=business_id)
+        return business
+    @classmethod
+    def update_business(cls,business_id):
+        business=cls.objects.filter(id=business_id)
+        business.name=Value
+        business.save()
+        return business
