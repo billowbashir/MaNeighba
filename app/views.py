@@ -49,3 +49,16 @@ def new_profile(request):
     else:
         profile_form = NewProfileForm()
     return render(request, 'new_profile.html', {"profile_form": profile_form,})
+def search_projects(request):
+
+    if 'neighborhood' in request.GET and request.GET['neighborhood']:
+        search_term=request.GET.get('neighborhood')
+        searched_hoods=Project.search_by_name(search_term)
+        message=f'{search_term}'
+
+        return render(request,'search.html',{"message":message,"neighborhood":searched_hoods,})
+
+    else:
+        message='You Havent searched for any term'
+
+        return render(request, 'search.html',{"message":message,})

@@ -29,7 +29,10 @@ class Neighbourhood(models.Model):
         neighborhood.save()
         return neighborhood
 
-
+    @classmethod
+    def search_by_name(cls,search_term):
+        neighborhood=cls.objects.filter(name__icontains=search_term)
+        return neighborhood
 
 
 class Profile(models.Model):
