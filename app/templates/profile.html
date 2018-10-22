@@ -1,0 +1,117 @@
+{%extends 'base.html'%}
+{% load bootstrap3 %}
+{%block content%}
+{{block.super}}
+<div style="padding-top: 100px;" class="container">
+<div class="row">
+  {%if profiles%}
+  {%for profile in profiles%}
+  <h2 style="text-align:center">Profile</h2>
+
+<div class="card" style="color:white;background-color:#4F0505">
+  <img src="{{profile.profile_pic.url}}" alt="profile picture" style="border-radius:70%;height:200px;width:200px;">
+  <h1>{{profile.user.username}}</h1>
+  <p class="title">{{profile.bio}}</p>
+
+
+ <p><button>Follow</button></p>
+</div>
+  <!-- <img class="img-thumbnail"style="border-radius:70%;height:200px;width:200px;" src="{{profile.profile_pic.url}}" alt="profile picture">
+  <h1 style="color:white;text-align:center;">{{request.user}}</h1>
+  <p style="color:white;">{{profile.bio}}</p> -->
+  {%endfor%}
+  {%else%}
+  <p style="color:white;text-align:center;">heyy {{request.user}} is this your first time on the gram navigate <a style="color:black;" href="{%url 'new-profile'%}">here</a> to create a profile</p>
+
+  {%endif%}
+
+
+  {%if neighbourhoods%}
+  {%for hood in neighbourhood%}
+  <div style="margin-top:20px;" class='col-md-4 '>
+  <div class="w3-container card">
+
+    <div class="w3-card-4" style="width:50%;">
+      <header class="w3-container edge">
+        <h1>{{hood.name}} Neighbourhood</h1>
+      </header>
+
+      <div class="w3-container content">
+        <p>{{hood.name}}</p>
+        <p>location: {{hood.location}}</p>
+        <p>admin: {{hood.admin}}</p>
+        <a href="#">details</a>
+      </div>
+
+      <!-- <footer class="w3-container edge">
+        <h5>Footer</h5>
+      </footer> -->
+    </div>
+  </div>
+   </div>
+{%endfor%}
+</div>
+</div>
+
+{%else%}
+<h2 style="color:white;">you seem to have no projects</h2>
+<button  class="btn btn-primary"><a style="color:white;"href="#">post project to be rated</a></button>
+{%endif%}
+
+</div>
+</div>
+<!-- <style>
+.img-thumbnail{
+  background-color: #4F0505;
+} -->
+<style>
+.content{
+  background-color: white;
+}
+.card{
+  width:800px;
+}
+.edge{
+  background-color: #4F0505;
+  color:white;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+
+
+<!-- </style> -->
+{%endblock%}
