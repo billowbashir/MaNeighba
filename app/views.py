@@ -24,6 +24,9 @@ def new_neighbourhood(request):
     else:
         form = NewNeighbourhoodForm()
     return render(request, 'new_neighbourhood.html', {"form": form})
-def neighbourhood_details(generic.DetailView):
-    model=Neighbourhood
-    template_name='details.html'
+# class neighbourhood_details(generic.DetailView):
+#     model=Neighbourhood
+#     template_name='details.html'
+def  neighbourhood_details(request,neighbourhood_id):
+    neighbourhood=Neighbourhood.objects.get(pk=neighbourhood_id)
+    return render(request,'details.html',{'neighbourhood':neighbourhood,})

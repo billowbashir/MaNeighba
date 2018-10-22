@@ -1,25 +1,27 @@
-<!-- {%extends 'base.html'%}
+{%extends 'base.html'%}
 {%block content%}
 {% load bootstrap3 %} {% load staticfiles%}
+
 <div style="margin-top:20px;" class='col-md-4 '>
 <div class="w3-container card">
 
   <div class="w3-card-4" style="width:50%;">
     <header class="w3-container edge">
-      <h1>{{hood.name}} Neighbourhood</h1>
+      <h1>{{neighbourhood.name}} Neighbourhood</h1>
     </header>
 
     <div class="w3-container content">
-      <p>{{hood.name}}</p>
-      <p>location: {{hood.location}}</p>
-      <p>admin: {{hood.admin}}</p>
-      <a href="{%url 'detail' hood.id %}">details</a>
+      <p>{{neighbourhood.name}}</p>
+      <p>location: {{neighbourhood.location}}</p>
+      <p>admin: {{neighbourhood.admin}}</p>
+
     </div>
 
-   <footer class="w3-container edge">
+    <!-- <footer class="w3-container edge">
       <h5>Footer</h5>
     </footer> -->
-  <!-- </div>
+  </div>
 </div>
  </div>
- {%endblock%} --> -->
+
+ {%endblock%}
