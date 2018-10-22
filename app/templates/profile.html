@@ -21,7 +21,7 @@
   <p style="color:white;">{{profile.bio}}</p> -->
   {%endfor%}
   {%else%}
-  <p style="color:white;text-align:center;">heyy {{request.user}} is this your first time on the gram navigate <a style="color:black;" href="{%url 'new-profile'%}">here</a> to create a profile</p>
+  <p style="color:white;text-align:center;">heyy {{request.user}} is this your first time on Maneighba navigate <a style="color:black;" href="{%url 'new-profile'%}">here</a> to create a profile</p>
 
   {%endif%}
 
@@ -40,7 +40,7 @@
         <p>{{hood.name}}</p>
         <p>location: {{hood.location}}</p>
         <p>admin: {{hood.admin}}</p>
-        <a href="#">details</a>
+        <a href="{%url 'detail' hood.id %}">details</a>
       </div>
 
       <!-- <footer class="w3-container edge">
@@ -54,8 +54,8 @@
 </div>
 
 {%else%}
-<h2 style="color:white;">you seem to have no projects</h2>
-<button  class="btn btn-primary"><a style="color:white;"href="#">post project to be rated</a></button>
+<h2 style="color:white;">you seem to have no neighbourhoods</h2>
+<button  class="btn btn-primary"><a style="color:white;"href="{%url 'new_neighbourhood'%}">add a new neighbourhood</a></button>
 {%endif%}
 
 </div>
