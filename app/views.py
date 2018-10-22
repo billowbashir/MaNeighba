@@ -53,7 +53,7 @@ def search_hoods(request):
 
     if 'neighborhood' in request.GET and request.GET['neighborhood']:
         search_term=request.GET.get('neighborhood')
-        searched_hoods=Project.search_by_name(search_term)
+        searched_hoods=Neighbourhood.search_by_name(search_term)
         message=f'{search_term}'
 
         return render(request,'search.html',{"message":message,"neighborhood":searched_hoods,})
