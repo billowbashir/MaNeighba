@@ -19,3 +19,17 @@ class Profile(models.Model):
     bio=models.CharField(max_length=300)
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     neighborhood=models.ForeignKey(Neighbourhood,on_delete=models.CASCADE)
+
+
+
+class Business(models.Model):
+    name=models.CharField(max_length=60)
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
+    neighborhood=models.ForeignKey(Neighbourhood,on_delete=models.CASCADE)
+    email=models.EmailField()
+
+
+# create_business()
+# delete_business()
+# find_business(business_id)
+# update_business()
