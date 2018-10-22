@@ -16,7 +16,7 @@ A neighbourhood application where people from a neighbourhood can get updates on
 To run the application do the following:
 
 - clone this repo by running:
-` git clone https://github.com/billowbashir/the-gram `
+` git clone https://github.com/billowbashir/MaNeighba `
 - set up a virtual environment
  ` python3.6 -m venv  python3.6 -m venv virtual `
  - activate virtual environment
@@ -39,7 +39,7 @@ To run the application do the following:
 - run the application locally with
  ` python manage.py runserver `
 ## Link to live site
-https://bashir-the-gram.herokuapp.com
+https://bashir-hood.herokuapp.com/
 
 ## likely bugs
 Currently the application has no known bugs but if you come across any issues feel free to contact me from the email address that will be provided below.
