@@ -1,6 +1,6 @@
 # MaNeighba
 
-![alt text](https://raw.githubusercontent.com/billowbashir/The-Gram/master/media/photos/the-gram.png)
+![alt text](https://raw.githubusercontent.com/billowbashir/MaNeighba/master/media/prophile_photos/neighba.png)
 ## author
 [bashir hassan](https://github.com/billowbashir/)
 
