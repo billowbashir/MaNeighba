@@ -26,10 +26,10 @@
   {%endif%}
 
 
-  {%if neighbourhoods%}
+  {%if neighbourhood%}
   {%for hood in neighbourhood%}
   <div style="margin-top:20px;" class='col-md-4 '>
-  <div class="w3-container card">
+  <div class="w3-container card1">
 
     <div class="w3-card-4" style="width:50%;">
       <header class="w3-container edge">
@@ -50,8 +50,7 @@
   </div>
    </div>
 {%endfor%}
-</div>
-</div>
+
 
 {%else%}
 <h2 style="color:white;">you seem to have no neighbourhoods</h2>
@@ -68,7 +67,7 @@
 .content{
   background-color: white;
 }
-.card{
+.card1{
   width:800px;
 }
 .edge{
